@@ -9,16 +9,22 @@ html {
 
 body {
     min-height: 100%;
-    display: grid;
-    grid-template-rows: 1fr auto;
 }
-
-footer {
-    grid-row-start: 2;
-    grid-row-end: 3;
-    text-align: center
+.container {
+    overflow: hidden;
 }
-
+img {
+    max-width: 100%;
+}
+.btn {
+    cursor: pointer;
+    padding: 5px 10px
+}
+.btn-transparent {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+}
 .icon {
     display: inline-block;
     width: 1em;
@@ -27,58 +33,78 @@ footer {
     stroke: currentColor;
     fill: currentColor;
 }
-
+.top-nav .btn {
+    color: #eee;
+    font-size: 18px;
+}
 /*MAIN NAV*/
 .main-nav {
     position: fixed;
     left: 0;
-    top: 0;
-    width: 140px;
+    top: 60px;
+    bottom: 0;
+    width: 200px;
     background-color: #333;
-    height: 100%;
     z-index: 10;
     color: #eee;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 10px 20px 20px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
 }
-
+.main-nav a {
+    color: #eee;
+    text-decoration: none
+}
 .main-nav ul {
     margin: 0;
     list-style: none;
     padding: 0;
 }
-
-.section-nav .item {
+.section-nav li ul {
+    display: none;
+}
+.section-nav .item, .game-nav .item {
     display: flex;
     flex-direction: row;
-    padding: 8px 0;
+    padding: 8px 20px;
     text-transform: uppercase;
     font-size: 12px;
     align-items: center;
 }
-
-.main-nav a {
-    color: #eee;
-    text-decoration: none
+.section-nav .item, .game-nav .item:hover {
+    background-color: #444;
 }
 
-.section-nav li ul {
-    display: none
-}
-
-
-.section-nav .icon {
-    font-size: 18px;
+.game-nav .icon {
+    font-size: 16px;
     margin: 0 10px 0 0;
     color: #eee;
 }
+.game-nav-header {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    background-color: #222;
+    font-size: 12px;
+    font-weight: bold;
+}
+.game-nav-img {
+    width: 50%;
+    margin-bottom: 5px;
+}
 
+.user-nav {
+    padding: 5px 10px;
+    background: #b31919;
+}
 .user-profile-link {
     display: flex;
     align-items: center
 }
 .user-nav .user-nickname {
-    font-size: 14px
+    font-size: 14px;
+    overflow: hidden;
 }
 
 .user-avatar-img {
@@ -90,23 +116,50 @@ footer {
 }
 
 .site-nav {
-    position: absolute;
-    bottom: 40px;
-    font-size: 11px;
-    max-width: 140px;
+    margin-top: auto;
+    font-size: 12px;
+    padding: 0 20px;
 }
-
+.site-nav .item {
+  padding: 3px 0;
+    display: block;
+}
 .site-info {
     margin-top: 10px;
     color: #aaa;
-    font-size: 10px
+    font-size: 10px;
 }
-
-.secondary-nav {
+.top-nav {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 60px;
-    background-color: #333
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.top-nav-center {
+    display: flex;
+    align-items: center;
+}
+.top-games a {
+    margin: 0 5px;
+    color: #fff;
+    text-decoration: none;
+    font: bold 12px Arial, sans-serif;
+}
+.top-nav .main-nav-logo {
+    height: 55px;
+    margin: 0 30px 0 0;
+}
+.top-nav input {
+    background: #666;
+    border: none;
+    height: 40px;
+    width: 300px;
+    font-size: 22px;
+    margin: 0 20px ;
 }
